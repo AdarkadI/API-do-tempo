@@ -30,26 +30,23 @@ Para rodar o front-end:
 
 CONFIGURAÇÃO DO BACK-END
 
-1. Entre na pasta do projeto back-end:
-   cd back-end-api-do-tempo
-
-2. Edite o arquivo src/main/resources/application.properties e configure:
+1. Edite o arquivo src/main/resources/application.properties e configure:
    server.port=8081
    openweather.api.key=SUA_CHAVE_REAL_AQUI
 
    (A chave deve ser obtida no site [https://home.openweathermap.org/api_keys](https://home.openweathermap.org/api_keys))
 
-3. Compile e rode o projeto:
+2. Compile e rode o projeto:
    mvn spring-boot:run
 
-4. Endpoints disponíveis:
+3. Endpoints disponíveis:
    POST /api/geocode  ->  Recebe { "q": "São Paulo,BR" } e retorna latitude e longitude.
    POST /api/weather  ->  Recebe { "lat": -23.55, "lon": -46.63 } e retorna informações do clima.
 
-5. Exemplo de teste com curl:
+4. Exemplo de teste com curl:
    curl -X POST [http://localhost:8081/api/weather](http://localhost:8081/api/weather) -H "Content-Type: application/json" -d "{"lat": -23.55, "lon": -46.63}"
 
-6. Resposta esperada:
+5. Resposta esperada:
    {
    "locationName": "São Paulo",
    "temp": 26.4,
